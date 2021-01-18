@@ -25,8 +25,14 @@ hires 		equ $c057
      
      
 Start	
-	jsr test_blitSHR_orig
+	; original blitSHR
+	;jsr test_blitSHR_orig
+        
+        ; new blitSHR_2 (no output)
+        ; jsr t_blitSHR_n2
 
+	; blitSHR_IO (screen 2 output and input 2 screen)
+        jsr t_blitSHR_IO
 
 
 end	jmp end
@@ -34,6 +40,8 @@ end	jmp end
 
 	include "blitSHR_orig.asm"
 	include "hires.asm"
+        include "blitSHR_new.asm"
+
 
 	org $2000
         incbin "marioluigi-apple2.hires.bin"

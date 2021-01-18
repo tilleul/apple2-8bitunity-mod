@@ -49,7 +49,7 @@ clear_hgr1	subroutine
         	bpl .loop
         	rts
         
-        
+        	org $0900
 hiresLinesHI	
 		hex     2024282C3034383C
         	hex     2024282C3034383C
@@ -75,6 +75,8 @@ hiresLinesHI
         	hex     22262A2E32363A3E
         	hex     23272B2F33373B3F
         	hex     23272B2F33373B3F
+                
+                org $0a00
         
 hiresLinesLO
 		hex     0000000000000000
@@ -126,5 +128,7 @@ mario		; 3x21
 		hex A8808A
 		hex AA80AA
 
+		org $b00
+                
 buffer		; 3x21
 		ds.b 63,00
