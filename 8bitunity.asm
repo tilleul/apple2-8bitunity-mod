@@ -25,14 +25,16 @@ hires 		equ $c057
      
      
 Start	
-	; original blitSHR
-	;jsr test_blitSHR_orig
-        
+	
         ; new blitSHR_2 (no output)
         ; jsr t_blitSHR_n2
 
 	; blitSHR_IO (screen 2 output and input 2 screen)
         jsr t_blitSHR_IO
+
+	; original blitSHR
+	jsr test_blitSHR_orig
+        
 
 
 end	jmp end
