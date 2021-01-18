@@ -103,5 +103,28 @@ hiresLinesLO
                 hex     D0D0D0D0D0D0D0D0
         
         
-        
-        
+mario		; 3x21
+		hex 80A880
+		hex 80AA80
+		hex C0AA85
+		hex A09D80
+		hex E88D87
+		hex E8FF9F
+		hex A8FF80
+		hex A8DF82
+		hex 80FF81
+		hex C09580
+		hex A89681
+		hex AA9683
+		hex AB968B
+		hex A3AA8B
+		hex C7AAFB
+		hex C7AAFD
+		hex C0AA85
+		hex D08285
+		hex D08295
+		hex A8808A
+		hex AA80AA
+
+buffer		; 3x21
+		ds.b 63,00

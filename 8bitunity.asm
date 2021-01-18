@@ -3,28 +3,37 @@
 	processor 6502
 	
         
-kbd = $c000
-kbstrb = $c010
-speaker	= $c030
+kbd 		equ $c000
+kbstrb 		equ $c010
+speaker		equ $c030
 
-graphx = $c050
-text = $c051
-page1 = $c054
-hires = $c057
+graphics  	equ $c050
+text 		equ $c051
+fullpage	equ $c052
+page1 		equ $c054
+hires 		equ $c057
+
         
         
 	org $803
         
-        
-
-	jsr clear_hgr1
-        
-        sta graphx
-        sta text
+       
+        sta hires
+        sta fullpage
+        sta graphics
+        sta page1
      
      
-Start	jmp Start
+Start	
+	jsr test_blitSHR_orig
 
 
-	include "8bitunity-plot_scroll.asm"
+
+end	jmp end
+
+
+	include "blitSHR_orig.asm"
 	include "hires.asm"
+
+	org $2000
+        incbin "marioluigi-apple2.hires.bin"
